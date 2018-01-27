@@ -25,7 +25,10 @@ build/Release
 node_modules
 
 # Ignore .env configuration files
-# .env do not ignore .env here...
+.env do not ignore .env here...
 
 # Ignore .DS_Store files on OS X
 .DS_Store
+
+# Ignore node modules
+node_modules
