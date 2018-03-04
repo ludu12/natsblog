@@ -22,9 +22,14 @@
 		<div class="col-sm-4 col-md-3">
 			<h2>Categories</h2>
 			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="list-group-item list-group-item-action active">All Categories</a>
+				<a href="/blog" class="list-group-item list-group-item-action {{#unless filters.category}}active{{/unless}}">
+				<strong>All</strong>
+				</a>
 				{{# each data.categories }}
-				<a href="{{categoryUrl key}}" class="list-group-item list-group-item-action">{{name}}</a>
+					<a href="{{categoryUrl key}}" class="list-group-item list-group-item-action {{#ifeq ../filters.category key}}active{{/ifeq}}">
+					{{name}}
+					{{#if postCount}}<span class="badge">{{postCount}}</span>{{/if}}
+					</a>
 				{{/each}}
 			</div>
 		</div>
