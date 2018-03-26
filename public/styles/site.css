@@ -5831,6 +5831,17 @@ button.close {
 .border-dark {
   border-color: #F3969A !important; }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
+.content {
+  padding: 10px; }
+
+.sticky + .content {
+  padding-top: 80px; }
+
 .btn {
   font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
   .btn, .btn:hover {

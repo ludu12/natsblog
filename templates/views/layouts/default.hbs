@@ -23,6 +23,11 @@
 	<body>
 		<div id="header">
 			<div class="container">
+				<h1>Welcome to natsBlog</h2>
+			</div>
+		</div>
+		<div id="mainNavbar">
+			<div class="container">
 				<div role="navigation" class="navbar navbar-default">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -40,19 +45,19 @@
 									</li>
 								{{/each}}
 							</ul>
-							<ul class="nav navbar-nav navbar-right">
+							{{!-- <ul class="nav navbar-nav navbar-right">
 								{{#if user}}
 								<li><a href="/keystone/signout">Sign Out</a></li>
 								{{else}}
 								<li><a href="/keystone/signin">Sign In</a></li>
 								{{/if}}
-							</ul>
+							</ul> --}}
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="body">
+		<div id="body" class="content">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
 				validation errors, success messages, etc
@@ -101,5 +106,21 @@
 		--}}
 		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
 		{{{isAdminEditorJS user}}}
+
+		<script>
+		window.onscroll = function() {myFunction()};
+
+		var navbar = document.getElementById("mainNavbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+		//console.log("sticky:" + sticky + " window:" + window.pageYOffset);
+		if (window.pageYOffset >= sticky) {
+			navbar.classList.add("sticky")
+		} else {
+			navbar.classList.remove("sticky");
+		}
+		}
+		</script>
 	</body>
 </html>
